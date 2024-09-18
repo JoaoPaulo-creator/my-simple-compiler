@@ -146,23 +146,6 @@ impl Compiler {
         }
     }
 
-    //fn generate_ir_node(&mut self, node: &AstNode) -> Vec<String> {
-    //    match node {
-    //        AstNode::Number(n) => self.ir.push(format!("PUSH {}", n)),
-    //        AstNode::BinaryOp(left, op, right) => {
-    //            self.generate_ir_node(left);
-    //            self.generate_ir_node(right);
-    //            match op {
-    //                '+' => self.ir.push("ADD".to_string()),
-    //                '-' => self.ir.push("SUB".to_string()),
-    //                '*' => self.ir.push("MUL".to_string()),
-    //                '/' => self.ir.push("DIV".to_string()),
-    //                _ => panic!("Unexpected operator"),
-    //            }
-    //        }
-    //    }
-    //}
-
     fn generate_ir_node(node: &AstNode) -> Vec<String> {
         match node {
             AstNode::Number(n) => vec![format!("PUSH {}", n)],
